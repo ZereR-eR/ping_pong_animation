@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pin Pong</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            background-color: sandybrown;
+        }
+        .pin-pong{
+            display: flex;
+
+            height: 700px;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 100px;
+        }
+
+        .bat-tan{
+            height: 200px;
+            width: 80px;
+            animation: bat-tan-one-move 4s 1s infinite linear alternate;
+        }
+
+
+        @keyframes bat-tan-one-move {
+            0%{
+
+            }
+            35%{
+                transform: skew(20deg) translate(100px,300px);
+            }
+            70%{
+                transform: skew(20deg) translate(10px,150px);
+            }
+            100%{
+                transform: skew(20deg) translate(150px,220px);
+            }
+        }
+        .circle{
+            height: 100px;
+            width: 80px;
+            background: url("img/straws.png") #333333 10px;
+            border: 2px solid black;
+            border-radius: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stick{
+            height: 100px;
+            width: 30px;
+            background-color: #222222;
+            border-radius: 20px;
+            position: relative;
+            border: 2px solid red;
+            left: 25px;
+            top: -20px;
+            z-index: 1;
+        }
+
+        .ball{
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            box-shadow: 0 0 5px #000000;
+            border-radius: 50%;
+            background-color: #ffff00;
+            z-index: 5;
+            left: 120px;
+            top: 400px;
+            animation: ball-move 4s 1s infinite linear alternate;
+        }
+
+        @keyframes ball-move {
+            0%{
+                /*transform: translate(-500px,-40px);*/
+            }
+            35%{
+                transform: translate(850px,-300px);
+            }
+            70%{
+                transform: translate(30px,120px);
+            }
+            100%{
+                transform: translate(800px,-220px);
+            }
+
+        }
+
+        .see{
+            width: 600px;
+            border-radius: 5px;
+            height: 100px;
+            background: url("img/batthern.png") lightgray;
+            transform: skewY(20deg);
+            box-shadow: 0 0 5px #000000;
+
+        }
+        .dout-one{
+            height: 75px;
+            width: 15px;
+            background: black;
+            top: 100px;
+            position: absolute;
+            box-shadow: 0 0 3px #000000;
+        }
+
+        .dout-two{
+            height: 75px;
+            width: 15px;
+            background: black;
+            position: absolute;
+            right: 0px;
+            bottom: -75px;
+            box-shadow: 0 0 3px #000000;
+        }
+
+        .bat-tan-two{
+            height: 200px;
+            width: 80px;
+            animation: bat-tan-two-move 4s 1s infinite linear alternate;
+        }
+
+        @keyframes bat-tan-two-move {
+            0%{
+
+            }
+            35%{
+                transform: skew(20deg) translate(-100px,-300px);
+            }
+            70%{
+                transform: skew(20deg) translate(-10px,-50px);
+            }
+            100%{
+                transform: skew(20deg) translate(-150px,-220px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="pin-pong">
+
+    <div class="bat-tan">
+        <div class="circle"></div>
+        <div class="stick"></div>
+    </div>
+
+    <div class="ball">
+
+    </div>
+
+    <div class="see">
+        <div class="dout-one"></div>
+        <div class="dout-two"></div>
+    </div>
+
+
+
+    <div class="bat-tan-two">
+        <div class="circle"></div>
+        <div class="stick"></div>
+    </div>
+
+</div>
+
+</body>
+</html>
